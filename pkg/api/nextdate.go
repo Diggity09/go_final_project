@@ -16,7 +16,7 @@ func NextDate(now time.Time, dstart string, repeat string) (string, error) {
 	// Парсим дату начала
 	date, err := time.Parse(DateFormat, dstart)
 	if err != nil {
-		return "", fmt.Errorf("некорректная дата начала: %v", err)
+		return "", fmt.Errorf("некорректная дата начала: %w", err)
 	}
 
 	// Разбираем правило повторения

@@ -39,6 +39,11 @@ func Tasks(limit int) ([]*Task, error) {
 		tasks = append(tasks, task)
 	}
 
+	// Проверяем курсор на наличие ошибок после цикла
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+
 	// Возвращаем пустой слайс вместо nil
 	if tasks == nil {
 		tasks = []*Task{}

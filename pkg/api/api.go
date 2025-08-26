@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 )
 
@@ -19,6 +20,14 @@ func writeJson(w http.ResponseWriter, data any) {
 	json.NewEncoder(w).Encode(data)
 }
 
-func writeError(w http.ResponseWriter, message string) {
+func writeError(w http.ResponseWriter, message string, statusCode int) {
+	w.WriteHeader(statusCode)
 	writeJson(w, map[string]string{"error": message})
+}
+
+func writeErrorWithLog(w http.ResponseWriter, message string, err error, statusCode int) {
+	if err != nil {
+		log.Printf("Ошибка: %s - %v", message, err)
+	}
+	writeError(w, message, statusCode)
 }

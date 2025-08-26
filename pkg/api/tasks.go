@@ -17,7 +17,7 @@ func tasksHandler(w http.ResponseWriter, r *http.Request) {
 
 	tasks, err := db.Tasks(50)
 	if err != nil {
-		writeError(w, "Ошибка получения списка задач: "+err.Error())
+		writeErrorWithLog(w, "Ошибка получения списка задач", err, http.StatusInternalServerError)
 		return
 	}
 
