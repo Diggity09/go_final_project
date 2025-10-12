@@ -18,7 +18,7 @@
 ## Технологии:
 * Go 1.21
 * REST API
-* Docker
+* SQL
 
 ## Автор проекта:
 Dmitrii Mironov
