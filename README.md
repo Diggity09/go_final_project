@@ -20,6 +20,8 @@
 * REST API
 * SQL
 * JSON
+* HTML
+* CSS
 
 ## Автор проекта:
 Dmitrii Mironov
