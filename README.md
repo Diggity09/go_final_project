@@ -19,6 +19,7 @@
 * Go 1.21
 * REST API
 * SQL
+* JSON
 
 ## Автор проекта:
 Dmitrii Mironov
